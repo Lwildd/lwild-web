@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { CssBaseline, Container } from '@mui/material';
+import Header from './Header';
+import About from './Sections/About';
+import Education from './Sections/Education';
+import Publications from './Sections/Publications.js';
+import Experience from './Sections/Experience';
+import Footer from './Footer.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter basename="/lwild-web">
+  
+      <CssBaseline />
+      <Header />
+      <Container maxWidth="md" sx={{ mt: 10 }}>
+        <About />
+        <Publications />
+        <Education />
+        <Experience />
+      <Footer/>
+      </Container>
+
+</BrowserRouter>
+    </>
   );
 }
 
